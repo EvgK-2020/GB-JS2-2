@@ -28,6 +28,7 @@ class ProductsList {
         this.container = document.querySelector(container);
         this._fetchData();
         this._render();
+        this._costProductsList()
     }
 
     init() {}
@@ -48,56 +49,41 @@ class ProductsList {
             this.container.insertAdjacentHTML('beforeend', product.render())
         }
     }
+
+    _costProductsList() {
+        let cost = 0;
+        for (let dataEl of this.products){
+            cost += dataEl.price;
+        }
+        console.log(`Стоимость всех товаров: ${cost}`);
+    }
 }
 
 const list = new ProductsList();
 
-class Cart {
-    constructor() {
-        // name - свойство в котором лежит имя
+
+class CartItem{
+    constructor(){
+        // id - id товара
+        // title - название товара
+        // img - картинка товара
+        // price - цена товара
+        // quantity - количество товара
     }
 
-    // some() - метод для подсчета стоимости корзины
+    //changeQuantity() - метод для изменения количества товара
+    //render() - метод для построения и вывода товарной позиции
 }
 
 
-// const products = [
-//     { id: 1, title: 'Notebook', price: 2000 },
-//     { id: 2, title: 'Keyboard', price: 200 },
-//     { id: 3, title: 'Mouse', price: 100 },
-//     { id: 4, title: 'Gamepad' },
-// ];
-//
-// const renderProduct = (product, img = 'https://placehold.it/100x50') => {
-//     return `<div class="product-item">
-//                  <img src="${img}" alt="${product.title}">
-//                  <div class="desc">
-//                      <h3>${product.title}</h3>
-//                      <p>${product.price}</p>
-//                      <button class="buy-btn">Купить</button>
-//                  </div>
-//              </div>`
-// };
+class Cart {
+    constructor() {
+        // data - массив товаров в корзине
+        // container - куда выводить корзину
+    }
 
-// const renderProduct = (product, img = 'https://placehold.it/100x50') => {
-//     const { title, price = 10 } = product;
-//     return `<div class="product-item">
-//                  <img src="${img}" alt="${title}">
-//                  <div class="desc">
-//                      <h3>${title}</h3>
-//                      <p>${price}</p>
-//                      <button class="buy-btn">Купить</button>
-//                  </div>
-//              </div>`
-// };
-
-// const renderPage = productsList => {
-//     // document.querySelector(`.products`).innerHTML = productsList.map(product => renderProduct(product)).join('');
-//     const element = document.querySelector(`.products`);
-//     let strElements = '';
-//     for (let product of productsList) {
-//         element.insertAdjacentHTML('beforeend', renderProduct(product));
-//     }
-// };
-//
-// renderPage(products);
+    // fetchData() - метод для получения списка товаров для корзины
+    // costOfCartItems () - метод для подсчета стоимости товаров в корзине
+    // render() - метод для построения и вывода корзины
+    // delItem() - метод для удаления позиции из корзины
+}
