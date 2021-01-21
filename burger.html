@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>
+</head>
+<body>
+    <form onsubmit="burger();return false">
+     <div class="basis">
+        <select id="basis" required>
+            <option disabled value="" selected hidden>Выберите размер бургера:</option>
+        </select>
+    </div>
+    <div class="filling">
+        <select id="filling" required>
+            <option disabled value="" selected hidden>Выберите начинку бургера:</option>
+        </select>
+    </div>
+    <div class="topping">
+        <P>Вы можете добавить:</P>
+    </div>     
+    <input type="submit">
+    </form>
+    <script defer src="js/burger.js"></script>
+</body>
+</html>
