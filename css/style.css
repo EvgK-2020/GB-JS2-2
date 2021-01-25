@@ -1,0 +1,7 @@
+input {
+    border: 1px solid black;
+}
+
+.error{
+    border: 3px solid red;
+}
